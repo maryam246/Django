@@ -21,7 +21,7 @@ after install check in system django is install or not by this command.
 
  here, you can keep any other name instead of MyWebsite which you want.
 
-================2nd day================
+# ================2nd day================
 
  ## Starting a Development Server
  By this command
@@ -54,3 +54,68 @@ In  main folder 'db.sqlite3' file is made when we migrate. sqlite use default da
 
 ### Download db
 - To see all data in sqlite.
+
+# ================3rd day================
+## Create Superuser in Django
+By this command
+**python manage.py createsuperuser**
+
+after running this above command it take some inputs in terminal. like this
+- (Username (leave blank to use 'ammarakhanam'): admin
+Email address: testing@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+)
+## Urls & Views
+Urls(Route) is also called Routes.
+like (
+
+    https://www.MyWebsite.com/ ----> Showing starting page
+
+    https://www.MyWebsite.com/blog/ ---->Show list of all posts
+
+    https://www.MyWebsite.com/blog/siglepost ---->Show Specify post
+)
+
+- Views:
+   -The logic executed for different URLs (https Method)
+
+            - Functions         - Class
+views is bassically connect with urls, when user open the urls then url hit the view which associate those urls.
+- so, for connecting purpose of urls, and view we make the urls.py in which we define all urls.py file and also make the view.py file in which we create our class and funtion.
+
+## Creating Django URLs & Views
+- To show the response of urls on site we use HttpRespons in views.py.
+In our main project name same name file exist in my creating website the name is MyWebsite inside this same name file MyWebsite is present in which we create the views.py file. in which you create python functions and classes.
+- We will create as many URLs on our website as the number of views we generate
+- To display the view on site first we import the views.py in urls.py, then set the function view path in urls.py.
+
+## Create dynamic URLs in Django
+Dynamic routes/urls is create in three ways.
+- int
+- starting
+- slug  (slud type data is like this hello-My-Website)
+
+## Render a HTML templates as response
+- create html page-->in templates
+- connect the html file---> in settings.py
+- make function---> in viwes.py 
+  -for this purpose import **from django.shortcuts import render**
+
+- all html data is store in templates file which we created in starting.
+- To Render a HTML templates as response, For this purpose we import the library.It renderd the html page.
+    - **from django.shortcuts import render**
+    - render takes two argument 1st paremeter is 
+       - request     and 2nd is  - Your page name
+- In setting.py folder in this templates directory is set.
+- In setting.py folder goes in  Templates varible. in this variable directory is present with this name ** DIRS** 
+- in directory keep templates in directory. like this
+   - [BASE_DIR,"templates"]
+
+## Difference btw HttpRespons AND Render
+-Render is usally used to load the templates or context, on the other hand, HttpRespons is ually for data.
+- HttpRespons is not able to call the Html page,
+but render is able to call the html page.
+- If you want just show the text on website use HttpRespons.
+- if you want to call the html page then impoer render module from django.shortcuts. 
