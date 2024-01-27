@@ -119,3 +119,66 @@ Dynamic routes/urls is create in three ways.
 but render is able to call the html page.
 - If you want just show the text on website use HttpRespons.
 - if you want to call the html page then impoer render module from django.shortcuts. 
+
+# ================4th day================
+## Passing data from a Django View to a template
+- In viwes file 1 more argument is add wich it dictonary name in **return render**.
+- In this all data like title, or main html text is not directely write in html file. Instead write in html we write in **Viwes.py** file in dictonary manner and pass the data **key** in html page in double **curly brackets{{}}**.
+## Django Template For Loop
+data like list from django is iterate by loop use in html file like this.
+- Structure of for loop in template.
+    - {% for n in clist%}
+
+               ......
+
+    {% endfor %}
+- (
+   <body>
+    {% for n in clist%}
+    <div>{{forloop.counter0}} {{n}}</div>
+    {% endfor %}
+    </body>
+    
+    )
+- Here, clist (contain list) is the variable which is present in viwes/Django file.
+- To fetch dictonary throug loop method is different.
+## Django Template Using if..elif..else
+- Structure of **if** statement in Django Template is:
+
+    - {% if n > 20 %}
+
+        ......statement
+
+      {% endif %}
+
+- Structure of **if else** statement in Django Template is:
+   - {% if numbers | length > 0 %}
+     
+      ......statement
+
+     {% else %}
+         
+         ....statement
+   
+     {% endif%}
+- Structure of **if , else ,elif** statement in Django Template is:
+   -  {% if numbers | length > 0 %}
+     
+      ......statement
+
+      {% elif %}
+         
+         ....statement
+
+      {% elif %}
+         
+         ....statement
+
+     {% else %}
+         
+         ....statement
+   
+     {% endif%}
+
+## Managing static files (e.g. images, JavaScript, CSS)STATICFILES_DIRS
+
