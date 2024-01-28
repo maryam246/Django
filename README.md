@@ -180,5 +180,40 @@ data like list from django is iterate by loop use in html file like this.
    
      {% endif%}
 
+# ================5th day================
+
 ## Managing static files (e.g. images, JavaScript, CSS)STATICFILES_DIRS
+
+- In this all html files we put in templates file, and all other files like(CSS,JS,IMG,FONTS) put in static folder.
+- Now, we connect html files in views.py.
+- To connect the statics files we set the directory in setting.py.
+   - we set the static path in setting.py like this.
+
+      - STATICFILES_DIRS = [
+
+    BASE_DIR , "static",  
+
+    "/var/www/static/",
+
+]
+
+here, static is the folder name in which all files (css,img,fonts) is present.
+- To check static file is called in browser by this
+    - http://localhost:1234/static/css/index.css
+
+      - here,static is folder and css is static file in which index name css file is present.
+- one more method we can use insted of setting path manually like this:
+  -<img src="/static/./img/features.png" alt="" />
+  
+  - we use for each static files data. is this 
+     - {% load static %} use at the top of html file
+     - use this like this:
+        - <img src="{% static './img/features.png' %}" alt="" />
+
+## Header and Footer in djano HTML Template
+In website multipages have same header and footer so, insted we coding the same code  for each page, we make seperately html file in which we code for header and footerin seprate files. which we can use in multiple pages of website.
+
+By this keyword **include**.
+- {% include "header.html" %}
+- {% include "footer.html" %}
 
