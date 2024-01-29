@@ -217,3 +217,41 @@ By this keyword **include**.
 - {% include "header.html" %}
 - {% include "footer.html" %}
 
+# ================6th day================
+
+## extends - Django Template Tags
+In this we don't include the header and footer file in each html file, instead this the header and footer are present at the same position but the inner content is changed according to different html file. content.
+- For this purpose we made the **base.html** file in template file.
+- We include the header and footer in the base file.
+- inner side of header and footer we use block code in base file through which we dynamically change the content of different html files.
+     - The code is :
+           - {% include "header.html" %}
+
+{% block content %}
+
+{% endblock %}
+
+{% include "footer.html" %}
+
+here, content is the name. this name is use where weextend base.html.
+
+- in main.html and other html file extend this base file like this:
+   - {% extends "base.html" %}
+   - {% block content %}
+        - ...content..
+   - {% endblock %}
+
+## Django URL Template Tags
+We direct use the / before the each part url in header file. but developers use this below urls method. both work same.
+
+- In urls.py file in path set all path like this :
+ 
+   - path('',views.homePage, name='home'),
+   - path('features/',views.features, name='features'),
+
+And also make changes in header.html file like this:
+   - <li><a href="{% url 'home' %}">Home</a></li>
+   - <li><a href="{% url 'features' %}">Features</a></li>
+
+
+## How to Highlight Active Links in Django
