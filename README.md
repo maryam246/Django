@@ -1,5 +1,5 @@
 # MVT (Model View Template)
-- MVT issoftware design pattern
+- MVT is software design pattern
 - Collection of 3 imp components MVT
 - **Model(Database)**: Model is going to act as the interface of your data.(any data to store, work with database handle all the data base)
 - **View(functions)**: is the user interface--what you see in your browser you render a website.
@@ -253,5 +253,46 @@ And also make changes in header.html file like this:
    - <li><a href="{% url 'home' %}">Home</a></li>
    - <li><a href="{% url 'features' %}">Features</a></li>
 
-
+# ================7th day================
 ## How to Highlight Active Links in Django
+In this we heiglight those page link which is currentlly active.
+- for this purpose we make the class in css file and this class name is use in our li tag.
+   - Class which i made in css file is like this:
+       - header .active a{
+    
+    background-color: red;
+
+}
+- We use **{{request.path}}** which give the exactly path of the active open page. after that we apply if else conditon which able to active the current open page.
+   - Like this static way:
+       - <li class="{% if request.path == '/' %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>
+
+   - The other way which work same and more efficient and use by programmer is by url:
+       - {% url 'contact' as url %}
+
+          <li class="{% if request.path == url %} active {% endif %}"><a href="{{url}}">Contact</a></li>
+
+## HTTP Request methods
+### Get Method
+- Get method send the user fill data append to the (url) page request.The page and encoded information is seperate by this ? chracter.
+- Restricted only upto 1024 chracters is send.
+- **Never use Get Method** for password or other sensitive information.
+- Cannot be used to send the binary data, like Images, word documents, to the server.
+
+### Post Method
+- The **Post method** transfers informations through/via HTTP headers.  
+- It is secure method.
+- Does not have Restriction.
+- Can be used send to send ASCII as well as binary data.
+- Post method follow the HTTP protocol.
+## Implement Form with Get Method
+- In viwes.py code we use this get method in 2 ways 1st one is:
+n1= int(request.GET['num1'])
+
+  n2 = int(request.GET['num2'])
+
+- 2nd one is:
+n1 = int(request.GET.get('num1'))
+
+n2 = int(request.GET.get('num2'))
+## Post Method With CSRF Token
