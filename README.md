@@ -341,6 +341,22 @@ By using action we submit the form to the other url, and we call the another vie
 - we use action in form tag like this:
    - <form method="post" action="{% url 'submitform' %}">
    whichh url we pass there the data is send to this url which is passed.
+
+  # ================9th day================
+  
 ## Django Forms tutorial
+- First we import **forms** from django, in forms.py which is created in the main project file, here we create forms.py in MyWebsite directory, where we inheret the import forms in user define class which name i keep myForm.
+- Then in views.py code we import our created forms.py like this: **from .forms import myForm**.Then myform store in the veriable fn = myForm, then this variable is use as value with any key in this we use form key,
+so, this key is we use in our userform.html like this:**{{form}}**
+- Visit this site for more clerification of form:
+   - https://www.djangoproject.com/
+
+- To label the input field weuse this code like this in created forms.py
+   - num1 = forms.CharField(label="value 1")
+- If we want required or not required the input fields then we do this thing:
+   - num1 = forms.CharField(label="value 1" required=False)
+- If you want to change the type then use widget like this:
+  - num1 = forms.CharField(label="value 1", required=False, widgets=forms.TextInput(attrs={'class':"form-control"}))
 
 ## Django calculator
+## Check Even Odd and Number Using HTML Forms in Django
