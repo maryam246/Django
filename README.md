@@ -286,6 +286,7 @@ In this we heiglight those page link which is currentlly active.
 - Can be used send to send ASCII as well as binary data.
 - Post method follow the HTTP protocol.
 ## Implement Form with Get Method
+- In this method we also fill the form by Showing above url at the website, this mean that the user data is not hidden, which may cause spaming.
 - In viwes.py code we use this get method in 2 ways 1st one is:
 n1= int(request.GET['num1'])
 
@@ -295,4 +296,51 @@ n1= int(request.GET['num1'])
 n1 = int(request.GET.get('num1'))
 
 n2 = int(request.GET.get('num2'))
+
+# ================8th day================
 ## Post Method With CSRF Token
+
+- Use class of post in form and CSRF TOKEN like this:
+- In form template page code post in small letters.
+    - <form method="post">
+
+    {% csrf_token %}
+
+- crsf is used for hacker term., When hacker try to hit the user info form by thier internaly resources.
+- Csrf token used to stop the spaming.
+
+So, this thing is clear that if we use csrf token in our website then hacker not able to spaming your site.
+
+    - Like GET method same doing all this Post method. Here, Post should be capital in request.
+       -         if request.method=="POST":
+            
+            n1 = int(request.POST.get('num1'))
+
+            n2 = int(request.POST.get('num2'))
+
+## Page redirect in Django
+ For this purpose we use this in view.py code. 1 way is used **HttpResponseRedirect**.
+ - from django.http import HttpResponseRedirect
+
+ when you send response the use the HttpResponseRedirect.
+      - url= "/services/?output={}".format(finalAns)
+
+            return HttpResponseRedirect(url)
+
+ If you don't want to use this method, then use this **redirect**. 
+ - from django.shortcuts import render, redirect.
+   - when you send response the use the redirect.
+      - url= "/services/?output={}".format(finalAns)
+
+            return redirect(url)
+
+## Form action in Django
+By using action we submit the form to the other url, and we call the another view function at these url.
+- Basically we use action when we want to immplement our logic at the other page,on the user form so we get the user form data then we Implement our logic at the page.
+- We use action in form, Because action is the form attribute.
+- we use action in form tag like this:
+   - <form method="post" action="{% url 'submitform' %}">
+   whichh url we pass there the data is send to this url which is passed.
+## Django Forms tutorial
+
+## Django calculator
