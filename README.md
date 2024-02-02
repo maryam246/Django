@@ -342,8 +342,7 @@ By using action we submit the form to the other url, and we call the another vie
    - <form method="post" action="{% url 'submitform' %}">
    whichh url we pass there the data is send to this url which is passed.
 
-  # ================9th day================
-  
+   # ================9th day================
 ## Django Forms tutorial
 - First we import **forms** from django, in forms.py which is created in the main project file, here we create forms.py in MyWebsite directory, where we inheret the import forms in user define class which name i keep myForm.
 - Then in views.py code we import our created forms.py like this: **from .forms import myForm**.Then myform store in the veriable fn = myForm, then this variable is use as value with any key in this we use form key,
@@ -360,3 +359,30 @@ so, this key is we use in our userform.html like this:**{{form}}**
 
 ## Django calculator
 ## Check Even Odd and Number Using HTML Forms in Django
+# ================10th day================
+# Create Simple Marksheet in Django
+# Normal Form Validation
+# Models in your Django Application
+When client request to to develop the website then if you make the website static, then if developers need to change any thing in website manually for this purpose you grant the menu in admin section where he able to change. SO, FOR this purpose we make the models in admin to show the option in admin to developer.
+- In models we set the fields name, which relate thier database column.
+- we keep model name same as table names.
+- when we create models we need to mention the fields relate to model.
+- We make models to make website things dynamic.
+- **Visit the django model document official site**.
+
+**We need to make model this 3 things**
+    - Should be able to make model.
+    - Should be able to convert model in migration.
+    - and at the last how to migrate.
+
+- Then after this doing above 3 things in admin option is appear.
+- Model make command is this:
+   **python manage.py startapp service**
+   - above we create service name model.
+- By pass this above command the service name folder is create in project directory.
+   - In this folder we see the **models.py , admin.py** file in admin.py file we create logic in which we decide which field to be show to admin.
+
+- when we make fileds in models we run this command.
+   - **python manage.py makemigration**
+- After run above command we run this below command which make the table.
+   - **python manage.py migrate**
