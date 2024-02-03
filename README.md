@@ -386,3 +386,72 @@ When client request to to develop the website then if you make the website stati
    - **python manage.py makemigration**
 - After run above command we run this below command which make the table.
    - **python manage.py migrate**
+# ================11th day================
+## 1) Create Model in Django
+- 1st create app(by making app mean service option we get in admin)
+- 2nd after creating model create fields
+- 3rd set the migration
+- 4rth then migrate model which create the tale in **DB**.
+       - - **python manage.py startapp service**
+      - To create model 1st we make app by ABove command then in 
+
+models.py we make class with any name in our case we make service 
+
+class and int the parameter we inherit the (models.Model) which crate the 
+
+fields in model.
+- Visit **Djangoproject.com/django.Charfield**.
+- By using the djano fields we make schema.
+- when migration is create it automatically create the **id key** and also 
+
+auto set increment.
+- Go in settings and then in **INSTALLED_APPS =** connect your app. 
+
+in our case we connect the servicefile.
+
+### 2) Now we need to run migration by this command:
+  - **python manage.py makemigrations**.
+  - After creating models we convert models in tables by migrate 
+
+command.
+      - **python manage.py migrate**
+ - After once migrate again not able to migrate by the same above 
+
+command.
+   #### Register your models. here.
+- Now go in **admin.py** code which is present in service app, we need 
+
+to create some functions,keys, and some things to registerd then we able 
+
+to see the option in admin.
+    - In admin.py code import your model by this command.
+    -  **from service.models import Service**.
+- Now check in the admin option is not created or not.
+
+- NOw i clear and summarize in how many fiels i work.
+   - Create models in Fields **>>** By using make migration command 
+
+convert model in migration **>>* Then go in settings.py where we 
+
+connect our app in (INSTALLED APP)  **>>** then in admin.py code 
+
+import model and make class and register model. **>>* then By using 
+
+migrate command convert model in migrate **>>**
+
+## Get all table data in Django | objects.all ()
+## Order or Query in Ascendingor Desending
+## Limit Query results in Django
+## TinyMCE Integration With News App in Django
+## Marquee Tag for Display News in Django
+## Display news in Detail Page
+## Reset Django Admin password
+## Explain Filter Work in Django
+## Auto SlugField - Explained with Examples
+## Pagination and How to Add Pagination in django
+## Explain Last page Pagination & Number Counter Logic in Django
+## Save Form Data to database
+## How to Upload a File with FileField in Django
+## How to Display Uploaded Image in the Template in Django
+## How to sending Email in Django Project
+## Explain HTML Content and what is Email Multi alternatives
