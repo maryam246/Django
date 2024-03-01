@@ -440,6 +440,17 @@ import model and make class and register model. **>>* then By using
 migrate command convert model in migrate **>>**
 
 ## Get all table data in Django | objects.all ()
+- 1st in MyWebsite>>Views.py  we called the models.
+   - from service.models import Service(the data is present in model, and data is goes in table.)
+- Through model we get data.
+   - we create the serviceData variable and write query to get all objects data.
+      - Query is (**servicesData= Service.objects.all()**)
+- Then make this key **servicesData** in **data** dictionary renderin Html page.
+- Then at the service Html page we start the loop like this
+   - {% for n in servicesData %}
+   - {% endfor %}
+and get the data.
+- Here, like all() function thiere is many function we can used like (**get**(for single row),**filter**(for searching)).
 ## Order or Query in Ascendingor Desending
 ## Limit Query results in Django
 ## TinyMCE Integration With News App in Django
