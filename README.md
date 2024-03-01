@@ -451,7 +451,12 @@ migrate command convert model in migrate **>>**
    - {% endfor %}
 and get the data.
 - Here, like all() function thiere is many function we can used like (**get**(for single row),**filter**(for searching)).
-## Order or Query in Ascendingor Desending
+## Django Order_by or Query set, Ascendingor and Desending
+- 1st in MyWebsite>>views.py in quey we use order_by and in parameter we pass the field name.
+    - servicesData= Service.objects.all().order_by('service_title') . mean ascending
+- if this (-) before column name mean descending
+             -servicesData= Service.objects.all().order_by('service_title')
+order without (-) mean ascending.
 ## Limit Query results in Django
 ## TinyMCE Integration With News App in Django
 ## Marquee Tag for Display News in Django
