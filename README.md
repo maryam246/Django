@@ -455,10 +455,35 @@ and get the data.
 - 1st in MyWebsite>>views.py in quey we use order_by and in parameter we pass the field name.
     - servicesData= Service.objects.all().order_by('service_title') . mean ascending
 - if this (-) before column name mean descending
-             -servicesData= Service.objects.all().order_by('service_title')
+             -servicesData= Service.objects.all().order_by('-service_title')
 order without (-) mean ascending.
 ## Limit Query results in Django
+We set the limit by slicing formula like [:3]<br>
+We apply the slicing query on Objects query like this,<br>
+servicesData= Service.objects.all().order_by('-service_title')[:3],[4:7]
+- Don't use negative range like this [-1:6],[-3:-6] it gives error.
+## Implementation and Logics of Custom Template filters in Django
+Use **Safe** filter in the query which execute the tag which is used in the String paragraph or Text tag.<br>
+Like this (**{{n.service_des | safe}}**),
+(**{{n.service_des | upper | safe}}**),
+(**{{n.service_des | lower}}**),
+(**{{n.service_des | first| safe}}**)
+- **Visit docs.djangoproject.com**  for more Template filters
 ## TinyMCE Integration With News App in Django
+- See official site of
+     - **pypi.org/project/django-tinymce/**
+- 1st you install (**pip install django-tinymce**)
+- Then in **2nd step** connect tinymce in settings.py>>INSTALLED_APPS
+
+   - Then **new** name app is create, in new app go in models.py create class and inherit the models.Models.
+- Go at official website **pypi.org/project/django-tinymce/**
+    - and import **from tinymce.models import HTMLField**
+- Then add **news** in settings.py
+- Then go in news>> **admin.py** and import (**from news.models import news**)
+- Then make class to show which field to show in admin site.
+-  At last register your app like this (**admin.site.register(News,NewsAdmin**)
+- And run this command(**python manage.py makemigrations**) in terminal to migrations.
+- After migrations run this command in terminal(**python manage.py migrate**)
 ## Marquee Tag for Display News in Django
 ## Display news in Detail Page
 ## Reset Django Admin password
