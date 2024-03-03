@@ -485,8 +485,35 @@ Like this (**{{n.service_des | safe}}**),
 - And run this command(**python manage.py makemigrations**) in terminal to migrations.
 - After migrations run this command in terminal(**python manage.py migrate**)
 ## Marquee Tag for Display News in Django
+1st we add the new in  admin pannel, for this we use just Dummy content like we search on goole **Lorem IPsum** then copy title and discription and paste in news admin panel.
+
+- Then after adding news, at the bottom of slider we run the Marquee.
+    - If you know **j.query** then download plugging data.
+- Then use **marquee** Tag in home html page.
+- In Html for space we use this key word **&nbsp**
+- To add the anchor tag we use like this:
+   - (<a href=""> {{news.news_title}} </a>)
+- Then we use the javascript event **overmouse="stop()"       overmouse="start()" **.
 ## Display news in Detail Page
+- 1st we make the function in **views.py**:
+   - Like: **def newsDetails(request,id):**
+
+        - **return render(request,'newsdetails.html')**
+- 2nd create the html file **newsdetails.html** then, create the urls in **urls.py** like :
+    - path('newsDetails/<id>',views.newsDetails)
+
+- Then go in **views.py** their in **newsDetails** function you make  **newsDetails**like :
+      - newsDetails=News.objects.get(id=newsid)
+      - Here, **get()** function use to carry the single row. Mean that we apply here condition which take only one row.
+
+- Then we create the **data** dictinory in **newsdetails** function. and render this data varible in html page.
+- In **newsdetails.html** page we dynamic the database data discription title and description.
+- And we use **| safe** to execute the tags in database description.
 ## Reset Django Admin password
+To reset/ change the password we must know the user name we see our user name in **sqlite** database.
+- W e run this command **python manage.py changepassword admin**  here,
+
+admin is user name so, user name is according to which you want to change.
 ## Explain Filter Work in Django
 ## Auto SlugField - Explained with Examples
 ## Pagination and How to Add Pagination in django
