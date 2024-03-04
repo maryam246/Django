@@ -515,6 +515,14 @@ To reset/ change the password we must know the user name we see our user name in
 
 admin is user name so, user name is according to which you want to change.
 ## Explain Filter Work in Django
+- 1st we create the **form** in service.py in form we create 1 text box and other is submit button.
+- like this:
+  - <form method="get">
+              - <input type="text" name="servicename" value="" />
+              - <input type="submit" value="Search"/>
+  - </form>
+- Now we search the data on the basis of title, we can search data in two ways like we can search data with full name or we can with the just first letter we use the database method of **like** keyword.
+    
 ## Auto SlugField - Explained with Examples
 ## Pagination and How to Add Pagination in django
 ## Explain Last page Pagination & Number Counter Logic in Django
