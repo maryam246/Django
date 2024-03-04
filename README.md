@@ -540,7 +540,13 @@ admin is user name so, user name is according to which you want to change.
     -  we don't need to write the slug it automatically generate.
 - Then import the AutoslugField.like this:
     **from autoslug import AutoSlugField**  in new.py **>> models.py**.
-  
+    - Then write this line of code:
+    - **news_slug =AutoSlugField.(populate_from="news_title",unique=True,null=True,default=None)**
+    - here, (populate_from="news_title") use for -->  for which **field** you want to make slug
+    - this, unique=True use for -->  slug must be unique not repeated
+    - this, null=True use for -->  slug may be **blank**.
+    - this, default=None use for -->  defaulty carry may be null
+- Then 
 ## Pagination and How to Add Pagination in django
 ## Explain Last page Pagination & Number Counter Logic in Django
 ## Save Form Data to database
