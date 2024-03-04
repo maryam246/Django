@@ -522,6 +522,16 @@ admin is user name so, user name is according to which you want to change.
               - <input type="submit" value="Search"/>
   - </form>
 - Now we search the data on the basis of title, we can search data in two ways like we can search data with full name or we can with the just first letter we use the database method of **like** keyword.
+- Then we go in service.py in service function we create varible and call all objects,and apply condition.
+     - use if statement and also apply inside if condition.
+     -  In second if condition in **filter** parenthesis we use the
+    ### ( __icontains)
+  - ** __icontains** by this keyword we can search the title in  search bar by just **single word**
+- And we create **data** dictionary and renderd in service.html page.
+
+- **NOTE:** if you want to search with full name then use just this **(filter(service_title=st)** in function and if you want to search with just single alphabet then use this **filter(service_title__icontains=st)**.
+- And if we not found the recoard then we use the Django template built in function **{% Empty %}**.
+- **{% Empty %}** is work like **else**.
     
 ## Auto SlugField - Explained with Examples
 ## Pagination and How to Add Pagination in django
