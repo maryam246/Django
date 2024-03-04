@@ -534,6 +534,13 @@ admin is user name so, user name is according to which you want to change.
 - **{% Empty %}** is work like **else**.
     
 ## Auto SlugField - Explained with Examples
+- 1st we installed this in terminal by this command
+    - Visit the official site (pip install django-autoslug)
+    -  **pip install django-autoslug**
+    -  we don't need to write the slug it automatically generate.
+- Then import the AutoslugField.like this:
+    **from autoslug import AutoSlugField**  in new.py **>> models.py**.
+  
 ## Pagination and How to Add Pagination in django
 ## Explain Last page Pagination & Number Counter Logic in Django
 ## Save Form Data to database
