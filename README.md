@@ -551,6 +551,13 @@ admin is user name so, user name is according to which you want to change.
 
 - **NOTE:** INSTALL autoSulgField >> make field in model >> import AutoslugField from autoslug >> then use for attribute (populate_from,unique,null,default)
 ## Pagination and How to Add Pagination in django
+- Visit the official Pagination in django website.
+- In **Views.py** import this library
+     - **from django.core.paginator import Paginator**
+- Then apply logic on **views.py**
+- In service function we crate the variable and in paginator function we pass to **parameters 1** at which object paginator is apply an **2nd parameter** is that how many data at a time should be display.
+- Then get the page no, default value of page no is 1.
+-  To get the page no we make variable **page_number**.
 ## Explain Last page Pagination & Number Counter Logic in Django
 ## Save Form Data to database
 ## How to Upload a File with FileField in Django
