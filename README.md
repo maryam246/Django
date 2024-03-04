@@ -546,7 +546,10 @@ admin is user name so, user name is according to which you want to change.
     - this, unique=True use for -->  slug must be unique not repeated
     - this, null=True use for -->  slug may be **blank**.
     - this, default=None use for -->  defaulty carry may be null
-- Then 
+- Then run this coomand in terminal **python manage.py makemigrations**
+- after makemigrations run this command **python manage.py migrate**.
+
+- **NOTE:** INSTALL autoSulgField >> make field in model >> import AutoslugField from autoslug >> then use for attribute (populate_from,unique,null,default)
 ## Pagination and How to Add Pagination in django
 ## Explain Last page Pagination & Number Counter Logic in Django
 ## Save Form Data to database
