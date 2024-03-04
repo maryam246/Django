@@ -557,7 +557,8 @@ admin is user name so, user name is according to which you want to change.
 - Then apply logic on **views.py**
 - In service function we crate the variable and in paginator function we pass to **parameters 1** at which object paginator is apply an **2nd parameter** is that how many data at a time should be display.
 - Then get the page no, default value of page no is 1.
--  To get the page no we make variable **page_number**.
+-  To get the page no we make variable **page_number**  here, we sent the page name url (**page_no= request.GET.get('page')**).
+-  
 ## Explain Last page Pagination & Number Counter Logic in Django
 ## Save Form Data to database
 ## How to Upload a File with FileField in Django
