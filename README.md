@@ -405,7 +405,7 @@ fields in model.
 - when migration is create it automatically create the **id key** and also 
 
 auto set increment.
-- Go in settings and then in **INSTALLED_APPS =** connect your app. 
+- Go in settings.py and then in **INSTALLED_APPS =** connect your app. 
 
 in our case we connect the servicefile.
 
@@ -551,6 +551,7 @@ admin is user name so, user name is according to which you want to change.
 
 - **NOTE:** INSTALL autoSulgField >> make field in model >> import AutoslugField from autoslug >> then use for attribute (populate_from,unique,null,default)
 ## Pagination and How to Add Pagination in django
+for example:  you have10, to 20 records, and you want to show just 2 records at a time and show the next, previous button which show the recoards. so, we use the **Paginators**.
 - Visit the official Pagination in django website.
 - In **Views.py** import this library
      - **from django.core.paginator import Paginator**
@@ -558,9 +559,52 @@ admin is user name so, user name is according to which you want to change.
 - In service function we crate the variable and in paginator function we pass to **parameters 1** at which object paginator is apply an **2nd parameter** is that how many data at a time should be display.
 - Then get the page no, default value of page no is 1.
 -  To get the page no we make variable **page_number**  here, we sent the page name url (**page_no= request.GET.get('page')**).
--  
+-  Now we want to know at the current time i'm stand at which page no, 
+    - write this line of code: (**ServiceDataFinal= paginator.get_page(page_no)**).
+    - Then make the data name dictinory and render in html page.
+- Then go to work on Template 
+  - In service.html file
+  - Search on google **BOOTStraps Pagination 4** to make to make good looking.
+  - Then copy the design and pass in htmlfile.
+
+Then in copy design code pagination make some changes make first button and also set the url **?services/?page=1**.
+- Then apply for if condition in copy pagination design code.
+- if of first and previous is work only that time if previous r 1st page number is available.
+   if contion is:  **{% if servicesData.has_previous %}**.and also close the if condition ** {% endif %}**
+
+- Then apply previous buttoon logic if previousoage number is present then it take you to the previous page.
+   - **href=/services/?page={{servicesData.previous_page_number}}**  previous_page_number syntax is fix you can't be change it.
+- Then apply the logic on next button, same as previous but changing the next word with preivous word.
+  - **href="/services/?page={{servicesData.next _page_number}}"**
+  - The, apply the if condition on next button, beacuse next button is wait for next page so, at the last page we want to stop. so, we apply if condition to stop.
+      - **{% if servicesData.has_next %}** and also close the if condition ** {% endif %}**
 ## Explain Last page Pagination & Number Counter Logic in Django
+- Make the last page button andy apply logic in **views.py** service function dictionary and pass the created variable in **href** of last button. 
+- Now we make the list number of pages in conprehensive way so, we make list comprehenstion.
+  - For this list purpose we make the key **totalPagelist** in data dictionary of service function. 
+  - Then start the loop below the previous button code.
+  **{% for n in totalPagelist %}**.
+
+- **NOTE:** just remember the syntax, **has_previous, previous_page_number, next_page_number,  has_next**
 ## Save Form Data to database
+In this we take the data from front end and save the dasta in database.
+- 1st we create the **app** with the name of **contactenquiry**. 
+- It work like insert query.
+- we work on **contact.htlm** we apply the **csrf_token** it's used when we use the **get method**.  
+- Ans in **views.py** we make the **safeEnquiry** function and render in contact.html page.
+- Then make url path in **url.py**.
+- Then go in **view.py** and call the **contactEnquiry** model.
+- Then in **saveEnquiry function** we recive the data from front end recive data. By appliying if condition.
+- Now, make the variable with any name which you want then, in varible call the model **contactEnquiry()** which you create.
+and pass the field name as a parameter.
+   - At **right** side field name and **left** side value which you get.
+- Then, which variable you use in our this case we use **en** variable then store the data of **en** variable like this.
+    - **en.save()**
+- Then, if you want to send **Response** then at the above of **if** condition make variable.
+   - LIke, **n=''**
+   - And at the below of **en.save** print message **n='Data Inserted.'**
+   - Then, renderd this like this, **{'n':n}**.
+
 ## How to Upload a File with FileField in Django
 ## How to Display Uploaded Image in the Template in Django
 ## How to sending Email in Django Project
