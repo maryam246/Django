@@ -665,11 +665,3 @@ and pass the field name as a parameter.
 - Int his also mention the which type of data mean (html) tag data send.
 - Then we import this library (**from django.core.mail import EmailMultiAlternatives**) in **views.py**. and apply the logic.
 
-## Authors
-
-- [@octokatherine](https://www.github.com/octokatherine)
-
-
-## Appendix
-
-Any additional information goes here
