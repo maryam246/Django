@@ -605,7 +605,71 @@ and pass the field name as a parameter.
    - And at the below of **en.save** print message **n='Data Inserted.'**
    - Then, renderd this like this, **{'n':n}**.
 
-## How to Upload a File with FileField in Django
+## How to Upload a File with FileField() in Django(in admin side)
+- Make **media** name folder in main project directory.
+- Then go in **setting.py** and define 2 things 
+   - 1 is: **MEDIA_ROOT= BASE_DIR /"media"** # here we conceret the (/"media")
+   - 2nd is: **MEDIA_URL= "/media/"**
+- Then, go in urls.py** import 2 library ** from Django.
+   - **from django.conf import settings** (from this setting we use media)
+   - **from django.conf.urls.static import static** (it allow to use media with URL_PATTERN **urls.py**)
+- Then at the below of **urls.py** code use **DEBUG** code.( in this image and folder are store)
+- Then, go in your APP in our case go in **news** app >> models.py >> make field **new_image** in which we use the **FileField()** functions. 
+   - in FileField() parameter we declared the where upload the file.,
+   - max_length,  (how much length of url)
+   - null = True,
+   - default = None
+- **Note**: settings.py >> urls.py >> news model(your model)
+- Then, makemigration the model. so, new field is show in admin side.
+- Then, migrate the field.
+- Then, go in **admin.py** wher we set the logic to show the name of image in admin.
 ## How to Display Uploaded Image in the Template in Django
-## How to sending Email in Django Project
+- To display the image at the front end we use **<img>** tag.
+- When we click on the slider urls at front page then which page is open the **title and description ** are show we want to show the image so, 
+- We go in html page and use the **<img>** tag.
+  - Write the code in html. file in which we give the folder name url to **src=** like this:
+     -  <div class="col-12">
+        <img src="/media/{{newsDetails.news_image}}"/>
+    </div>
+     - Here, **col-12** take the 12 coloum space.
+- Now if you want to show the image one side and text other sidee then do this line of like this:
+     -Then, divide the column in equal parts. both content and immage.
+- Now, we want in which field we dont add the broken-image it Does not show the image sign. so, for this purpose we use the **if condition**.
+## How to sending Email & (SMPT)simple made transfer protocol Setup  in Django Project
+- We use the gmail **SMTP** in local system because currently we don't upload the **website**.
+- Then open those your **gmail** account which you know the password and then **CLICK** on the 3,3 vertical rows in gmail account then, **click** on the **account*..
+   - Then, search the **less secure app access** and allow.
+- Visit the official websiteof django documentetion of **SMPT backEnd**
+  - **https://docs.djangoproject.com/en/3.2/topics/email/**
+- Then, go in **settings.py** and set this 5 things,
+   - EMAIL_HOST = 'smtp.gmail.com'
+   - EMAIL_PORT = 587
+   - EMAIL_HOST_USER= 'khanammaryam036@gmail.com'
+   - EMAIL_HOST_PASSWORD = 'mimibyby'
+   - EMAIL_USE_TLS= True # it is a status which we give always True
+- Then, use this library (**from django.core.mail import send_mail**) in **views.py**
+  - ANd also **paste** the code in  which is copy from the official site.
+    - And then, make changes according to your mails.
+- Then open your template/ frontend page where we use the mail.setup code.
+- **NOTE:** mail recive maybe late beacusewe use to send mail from over local system.
+
+- **MAIN POINT**: create gmail >>>  go gmail and allow the less secure app    >>>   then make SMTP and then implent the all parrameter in settings.py   >>>   import libray and use code from **django official website**.  
+   
 ## Explain HTML Content and what is Email Multi alternatives
+- **NOTE** : Use **SMTP** in both when we use 
+    - if i use send message
+    - or if we use EmailMultiAlternatives
+   - in both cases use **SMTP**.
+- Use to send the **html tags** we use this Email Multi alternatives.
+- In this all things are same as we use in local system gmail work, like **subject, True, content/message, from, To**.
+- Int his also mention the which type of data mean (html) tag data send.
+- Then we import this library (**from django.core.mail import EmailMultiAlternatives**) in **views.py**. and apply the logic.
+
+## Authors
+
+- [@octokatherine](https://www.github.com/octokatherine)
+
+
+## Appendix
+
+Any additional information goes here
